@@ -1,0 +1,50 @@
+.expense-item {
+   display: grid;
+   grid-template-columns: 100px 2fr 1fr;
+   background: #4b4b4b;
+   gap: 1rem;
+   padding: 1rem;
+   border-radius: 10px;
+   margin-bottom: 1rem;
+}
+
+.expense-date {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   width: 6rem;
+   height: 6rem;
+   border: 1px solid #ececec;
+   background-color: #2a2a2a;
+   color: white;
+   border-radius: 12px;
+}
+
+.expense-date_day {
+   font-weight: 700;
+}
+.expense-date_year {
+   font-weight: 500;
+}
+.expense-date_month {
+   font-weight: 500;
+}
+
+.item {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+}
+
+.title {
+   color: #fff;
+}
+
+.price {
+   color: #fff;
+   border: 1px solid #fff;
+   padding: 1rem;
+   background-color: #40005d;
+   border-radius: 10px;
+}
