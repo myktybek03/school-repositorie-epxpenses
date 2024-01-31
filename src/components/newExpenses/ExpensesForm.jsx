@@ -3,10 +3,10 @@ import Input from '../UI/Input'
 import Button from '../UI/Button'
 import './ExpensesForm.css'
 
-const ExpensesForm = ({ onClick, onSubmit }) => {
+const ExpensesForm = ({ onClose, onSubmit }) => {
    const [inputText, setInputText] = useState('')
    const [inputNumber, setInputNumber] = useState(0)
-   const [inputDate, setInputDate] = useState(null)
+   const [inputDate, setInputDate] = useState(undefined)
 
    const getInputValue = (e) => {
       setInputText(e.target.value)
@@ -20,7 +20,8 @@ const ExpensesForm = ({ onClick, onSubmit }) => {
       setInputDate(e.target.value)
    }
 
-   const submitHandler = () => {
+   const submitHandler = (event) => {
+      event.preventDefault()
       const product = {
          title: inputText,
          price: inputNumber,
@@ -31,8 +32,6 @@ const ExpensesForm = ({ onClick, onSubmit }) => {
       setInputNumber('')
       setInputDate('')
    }
-
-   console.log(inputText)
 
    return (
       <form>
@@ -59,7 +58,7 @@ const ExpensesForm = ({ onClick, onSubmit }) => {
                onChange={getDateValue}
             />
             <div className="button">
-               <Button onClick={onClick} marginRight="20px">
+               <Button onClick={onClose} marginRight="20px">
                   Отмена
                </Button>
                <Button onClick={submitHandler}>Добавить расходы</Button>

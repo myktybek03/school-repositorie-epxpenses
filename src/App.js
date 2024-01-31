@@ -29,15 +29,12 @@ const App = () => {
 
    const addNewExpensesHandler = (data) => {
       setNewProduct([...newProduct, data])
-      // productData.push(data)
    }
 
    const deleteExpenses = (id) => {
       const newData = newProduct.filter((el) => el.id !== id)
       setNewProduct(newData)
    }
-
-   console.log(newProduct, 'arr')
    return (
       <div>
          <NewExpenses onSubmit={addNewExpensesHandler} />
